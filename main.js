@@ -1,3 +1,5 @@
+const arr = [];
+arr.push(3)
 const Ray = function () {
     return {
       length: 0,
@@ -17,10 +19,11 @@ const Ray = function () {
       
           if (value === this[i]) {//this[i]????
             return true;
-          } else {
-            return false;
-          }
+          } 
         }
+          return false;
+          
+        
       },
       indexOf: function(str){
           for ( let i = 0; i < this.length; i++){
@@ -35,11 +38,26 @@ const Ray = function () {
           // console.log(value)
           
           let toShift = this[0];
-          console.log(toShift)
-          delete this[0];
+          for ( let i = 0; i < this.length; i++){
+              this[i] = this[i+1];
+            //   console.log(this[i]);
+          }
+        //   console.log(toShift)
+
+          delete this[this.length-1];
           this.length --;
           return toShift;
           
+      },
+      unshift: function(value){
+          
+          for ( let i = this.length; i >= 1; i--){
+              this[i]=this[i-1];
+          }
+          this[0]= value;
+          this.length++;
+        //   console.log(this)
+
       }
   
   
