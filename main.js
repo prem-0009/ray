@@ -51,7 +51,7 @@ const Ray = function () {
       },
       unshift: function(value){
           
-          for ( let i = this.length; i >= 1; i--){
+          for ( let i = this.length; i >= 1; i--q){
               this[i]=this[i-1];
           }
           this[0]= value;
